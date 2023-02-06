@@ -1,20 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import clsx from "clsx"
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container"
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/avatar.jpg'
+} from "@/components/SocialIcons"
+import portraitImage from "@/images/avatar.jpg"
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -65,8 +65,8 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I've been a computer Enthusiast since a young age,
-                with my enthusiasm of Computers I've focused soley on improving the end user experience.
+                I have been a computer Enthusiast since a young age,
+                with my enthusiasm of Computers I have focused soley on improving the end user experience.
               </p>
               <p>
                 During school I first worked with Wyoming Inc.,
