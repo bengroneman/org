@@ -4,46 +4,30 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Almost Home Wyoming',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'A static site built to save the organization',
+    link: { href: 'https://almosthomewyoming.org', label: 'almhosthomewyoming.org' },
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
+    name: 'Water for Wildlife - Museum Exhibit',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'A custom Linux build on a respberry Pi to showcase crucial role Hunters play in Wildlife conservation',
+    link: { href: '#', label: 'github.com/bengroneman/almosthomewyoming' },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: 'Healthcare Quality Toolkit',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Flask, and Svelte toolkit with JWT auth',
+    link: { href: '#', label: 'github.com/bengroneman' },
     logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
   },
 ]
 
