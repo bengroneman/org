@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="strapi_server" />
+    <orderEntry type="module" module-name="almosthomewyoming" />
   </component>
 </module>

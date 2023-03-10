@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/WebstormProjects/almosthomewyoming/.idea/almosthomewyoming.iml" filepath="$USER_HOME$/WebstormProjects/almosthomewyoming/.idea/almosthomewyoming.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/org.iml" filepath="$PROJECT_DIR$/.idea/org.iml" />
       <module fileurl="file://$PROJECT_DIR$/../strapi_server/.idea/strapi_server.iml" filepath="$PROJECT_DIR$/../strapi_server/.idea/strapi_server.iml" />
     </modules>

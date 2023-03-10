@@ -8,7 +8,6 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
@@ -25,6 +24,8 @@ import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
+import {getAllResumeEntries} from "@/lib/getAllResumeEntries";
+import {getHomePageContent} from "@/lib/getHomePageContent";
 
 function MailIcon(props) {
   return (
@@ -137,60 +138,15 @@ function Newsletter() {
   )
 }
 
-function Resume() {
-  let resume = [
-    {
-      company: 'Language I/O',
-      title: 'QA Automation Engineer',
-      logo: logoLIO,
-      start: 'Jul 2022',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Blue Engineering LLC.',
-      title: 'Owner',
-      logo: logoPlanetaria,
-      start: 'Dec 20221',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-
-    {
-      company: 'Pine Cove Consulting',
-      title: 'IT Consultant',
-      logo: logoPCC,
-      start: 'Nov 2021',
-      end: 'Jan 2022',
-    },
-
-    {
-      company: 'Sagewest Healthcare',
-      title: 'Systen and Network Analyst',
-      logo: logoSageWest,
-      start: 'Sep 2020',
-      end: 'Sept 2021',
-    },
-    {
-      company: 'National Outdoor Leadership School',
-      title: 'Digital Campaign Coordinator',
-      logo: logoNOLS,
-      start: 'Jan 2019',
-      end: 'Apr 2020',
-    },
-    {
-      company: 'National Outdoor Leadership School',
-      title: 'Web Development Intern',
-      logo: logoNOLS,
-      start: 'Mar 2018',
-      end: 'Jan 2019',
-    },
-  ]
-
+function Resume ({entries}) {
+  let resume = entries.map(entry => {
+    return {
+      company: entry.attributes.Company,
+      title: entry.attributes.Title,
+      start: entry.attributes.StartDate,
+      end: entry.attributes.EndDate,
+    }
+  });
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -200,9 +156,6 @@ function Resume() {
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-            </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
@@ -215,17 +168,14 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
+                  <time>
+                    {role.end ? role.end : 'Present'}
+                  </time>
               </dd>
             </dl>
           </li>
@@ -262,7 +212,7 @@ function Photos() {
   )
 }
 
-export default function Home({ articles }) {
+export default function Home({ articles, resumeEntries, homePageContent }) {
   return (
     <>
       <Head>
@@ -271,17 +221,16 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content="A mission driven engineer with a drive to solve user experience challenges with data-driven and intuitive solutions. I bring diverse experience in Web Development, data engineering, consulting, with a soft spot for JavaScript."
+          content={homePageContent.attributes.SubHeader}
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, owner, and automation enthusiast
+            {homePageContent.attributes.Header}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          A mission driven engineer with a drive to solve user experience challenges with data-driven and intuitive solutions.
-          I bring diverse experience in Web Development, data engineering, consulting, with a soft spot for Python.
+            {homePageContent.attributes.SubHeader}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -312,7 +261,7 @@ export default function Home({ articles }) {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
-            <Resume />
+            <Resume entries={resumeEntries}/>
           </div>
         </div>
       </Container>
@@ -330,6 +279,8 @@ export async function getStaticProps() {
       articles: (await getAllArticles())
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),
+      resumeEntries: await getAllResumeEntries(),
+      homePageContent: await getHomePageContent(),
     },
   }
 }
