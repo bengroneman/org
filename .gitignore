@@ -34,4 +34,4 @@ yarn-error.log*
 # generated files
 /public/rss/
 
-.idea
+.idea/
