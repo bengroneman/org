@@ -51,21 +51,35 @@ export default function Document() {
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+      <script
+        dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '', {
+                page_path: window.location.pathname,
+                });
+            `,
+        }}
+        />
+      </Head>
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="email" name="email" />
+        </form>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-MW5SFQPJ88"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
 
-          gtag('config', 'G-0E045Z2EX4');
+          gtag('config', 'G-MW5SFQPJ88');
         `}
       </Script>
-      </Head>
-        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-          <input type="email" name="email" />
-        </form>
-
-
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <Main />
         <NextScript />
