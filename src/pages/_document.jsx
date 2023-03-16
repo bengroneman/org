@@ -52,6 +52,9 @@ export default function Document() {
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
       </Head>
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="email" name="email" />
+        </form>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-0E045Z2EX4"
         strategy="afterInteractive"
