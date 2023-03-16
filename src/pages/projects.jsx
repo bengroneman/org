@@ -9,24 +9,24 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Almost Home Wyoming',
+    name: 'Almost Home Wyoming Website',
     description:
-      'A static site built to save the organization',
+      'A static Svelte site built to represent the Almost Home Wyoming organization',
     link: { href: 'https://almosthomewyoming.org', label: 'almhosthomewyoming.org' },
     logo: logoPlanetaria,
   },
   {
     name: 'Water for Wildlife - Museum Exhibit',
     description:
-      'A custom Linux build on a respberry Pi to showcase crucial role Hunters play in Wildlife conservation',
-    link: { href: '#', label: 'github.com/bengroneman/almosthomewyoming' },
+      'A custom Linux build on a Raspberry Pi to showcase crucial role Hunters play in Wildlife conservation',
+    link: { href: 'https://github.com/bengroneman/waterforwildlife', label: 'github.com/bengroneman/waterforwildlife' },
     logo: logoAnimaginary,
   },
   {
-    name: 'Healthcare Quality Toolkit',
+    name: 'My Github',
     description:
-      'Flask, and Svelte toolkit with JWT auth',
-    link: { href: '#', label: 'github.com/bengroneman' },
+      'View my open source code',
+    link: { href: 'https://github.com/bengroneman', label: 'github.com/bengroneman' },
     logo: logoHelioStream,
   },
 ]

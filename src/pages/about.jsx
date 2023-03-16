@@ -65,21 +65,21 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I have been a computer Enthusiast since a young age,
-                with my enthusiasm of Computers I have focused soley on improving the end user experience.
+                I have been a computer Enthusiast since a young age.
+                With my enthusiasm of Computers I have focused on improving the end user experience.
               </p>
               <p>
-                During school I first worked with Wyoming Inc.,
-                during my time there I learned about buildng websites with Wordpress on a custom PHP framework
+                While in school I first worked with Wyoming Inc.
+                During my time there I learned about buildng websites with Wordpress on a custom PHP framework
               </p>
               <p>
-                After my time with Wyoming Inc. I began building frontend features with NOLS,
+                After my time with Wyoming Inc., I began building frontend features with NOLS,
                 the National Outdoor Leadership School. Shortly after my internship with NOLS,
                 I was leading digital marketing campaigns to improve outward bound messaging,
                 and brought a strong focus on automation.
               </p>
               <p>
-                Since then I have spent time working in IT consulting for the Fremont County area,
+                Since then I have spent time working in IT consulting for the Fremont County area;
                 I most recently just wrapped up a website for the Almost Home Wyoming Organization: 
                 <a href="https://almosthomewyoming.org" alt="almost home wyoming website" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">Almost Home Wyoming</a>
               </p>

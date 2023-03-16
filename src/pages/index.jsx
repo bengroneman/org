@@ -112,7 +112,6 @@ function SocialLink({ icon: Icon, ...props }) {
 function Newsletter() {
   return (
     <form
-      action="/thank-you"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
       name="newsletter"
       method="POST"
@@ -236,11 +235,6 @@ export default function Home({ articles, resumeEntries, homePageContent }) {
             {homePageContent.attributes.SubHeader}
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/maygately"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
             <SocialLink
               href="https://github.com/bengroneman"
               aria-label="Follow on GitHub"
