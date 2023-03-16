@@ -51,18 +51,6 @@ export default function Document() {
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
-      <script
-        dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '', {
-                page_path: window.location.pathname,
-                });
-            `,
-        }}
-        />
       </Head>
         <form name="contact" netlify netlify-honeypot="bot-field" hidden>
           <input type="email" name="email" />
