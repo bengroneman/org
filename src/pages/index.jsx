@@ -9,13 +9,7 @@ import { Container } from '@/components/Container'
 import {
   GitHubIcon,
   LinkedInIcon,
-  TwitterIcon,
 } from '@/components/SocialIcons'
-import logoSageWest from '@/images/logos/sagewest-logo.png'
-import logoPCC from '@/images/logos/pcc_logo.png'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoLIO from '@/images/logos/LanguageIO-Logo.png'
-import logoNOLS from '@/images/logos/NOLS_Logo-Mud.png'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
