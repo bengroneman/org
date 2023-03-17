@@ -1,0 +1,80 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+export const meta = {
+  author: 'Ben Groneman',
+  date: '2023-03-17',
+  title: 'Playwright vs. Selenium vs. Playwright',
+  description:
+    'A breakdown of my experience using these automation tools',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Overview
+
+Below is a breakdown of the features and tooling available for three E2E testing frameworks (Cypress, Playwright, and Selenium). Playwright has the most versatile setup, offering extensive and simple locators, while including frame support, and integration with existing reporting systems and tooling.
+With auto waiting functionality the Playwright tests averaged **58% faster test runs**, with very similar results for the success rate.
+
+ ## Selectors
+**Cypress**
+- Only can use CSS selectors
+- This means no xpaths (i.e: no search by text)
+- Has auto wait functionality
+
+**Playwright**
+- Can use CSS Selectors, xPaths and get by label or text
+- Has auto waiting functionality
+
+**Selenium**
+- Can use CSS Selectors, and xPaths
+- Does not have auto wait functionality
+- This has to be handled with sleeps and pragmatically waiting for elements
+
+## Runtime performance
+To gather accurate runtime performance metrics I created three sets of test cases going over basic functionality of our application. I was unable to use Cypress for these tests because of its inability to handle iFrames. Overall runtime performance was increased by *58%*.
+With this performance increase we also see faster development times because we spend less time waiting for the tests to run.
+
+## Iframe support
+**Cypress**
+- No Iframe support
+
+**Playwright**
+- Built in support
+
+**Selenium**
+- Built in support
+
+## Tooling
+**Cypress**
+- Offers a clean dashboard to run tests from and report off of
+- Has a recorder browser plugin
+- Has non-functional selectors (class based)
+
+## Playwright
+- Offers a plain HTML report for reporting
+- Offers Allure integration for reporting and running tests
+- Has recorder CLI plugin
+- Offers safe selectors based on visible text or accessibility labels
+- Can test API’s and chrome extensions
+- Can take a functional or class based approach
+- Has Selenium grid integration for parallelization and distributed tests
+
+**Selenium**
+- Offers no out of the box support for reporting
+- Can integrate with Allure
+- Has recorder
+- Provides unsafe selectors (xpath, and class name based)
+
+## Public metrics
+**Cypress**
+- 42.7k stars on Github
+- 2.7k open issues on Github
+
+**Playwright**
+- 48.2k stars on Github
+- 738 open issues on Github
+
+**Selenium**
+- 25.9k stars on Github
+- 149 open issues on Github
