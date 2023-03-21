@@ -39,6 +39,19 @@ const modeScript = `
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-1E045Z2EX4');
+        `}
+      </Script>
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
@@ -55,19 +68,6 @@ export default function Document() {
         <form name="contact" netlify netlify-honeypot="bot-field" hidden>
           <input type="email" name="email" />
         </form>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-0E045Z2EX4"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'G-0E045Z2EX4');
-        `}
-      </Script>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <Main />
         <NextScript />
