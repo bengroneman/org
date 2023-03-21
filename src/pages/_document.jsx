@@ -56,7 +56,7 @@ export default function Document() {
           <input type="email" name="email" />
         </form>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-MW5SFQPJ88"
+        src="https://www.googletagmanager.com/gtag/js?id=G-0E045Z2EX4"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -65,7 +65,7 @@ export default function Document() {
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
 
-          gtag('config', 'G-MW5SFQPJ88');
+          gtag('config', 'G-0E045Z2EX4');
         `}
       </Script>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
