@@ -35,24 +35,25 @@ const modeScript = `
     updateMode()
   }
 `
+const ga_script = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date());
+
+gtag('config', 'G-1E045Z2EX4');
+`
 
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
+
+      <Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'G-1E045Z2EX4');
-        `}
-      </Script>
-      <Head>
+      <script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{__html: ga_script}}>
+      </script>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"
