@@ -16,26 +16,55 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 Below is a breakdown of the features and tooling available for three E2E testing frameworks (Cypress, Playwright, and Selenium). Playwright has the most versatile setup, offering extensive and simple locators, while including frame support, and integration with existing reporting systems and tooling.
 With auto waiting functionality the Playwright tests averaged **58% faster test runs**, with very similar results for the success rate.
 
+One thing to note: though I do include Cypress in this article, I was unable to write tests in it due to its lack of iFrame support (at the time of writing), which made testing within the Salesforce platform impossible.
+I included Cypress loosely in this article to inform, but not to compare performance, though I suspect the performance is similar to the gains seen from Playwright given the auto waiting functionality.
+
  ## Selectors
 **Cypress**
 - Only can use CSS selectors
-- This means no xpaths (i.e: no search by text)
+- This means no xpaths
 - Has auto wait functionality
 
 **Playwright**
 - Can use CSS Selectors, xPaths and get by label or text
+- Can filter by accessibility controls (get_by_label, get_by_role)
 - Has auto waiting functionality
 
 **Selenium**
 - Can use CSS Selectors, and xPaths
 - Does not have auto wait functionality
-- This has to be handled with sleeps and pragmatically waiting for elements
+- This has to be handled with sleeps, delays and polling for elements
+
+The importance of having a good set of selectors can make or break a test case. With the Playwright approach we get to write test cases in a way that reads just like a book.
+
+**Playwright login example**
+```python
+page.get_by_role("button", name="Login").click()
+page.get_by_placeholder("Email").type("email", delay=25)
+page.get_by_placeholder("Password").fill("password")
+page.get_by_role("button", name="Submit")
+```
+
+**Selenium login example**
+```python
+login_button = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CSS_SELECTOR,"#login"))
+login_button.click()
+username_input = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CSS_SELECTOR,"#username"))
+username_input.send_keys("email")
+password_input = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CSS_SELECTOR,"#password"))
+password_input.send_keys("password")
+submit_btn = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CSS_SELECTOR,"#password"))
+submit_btn.click()
+```
+As you can see the Selenium implementation shown above requires over twice the amount of code, and brings along some complexity, and makes assumptions about the ID's presented on the page.
+Reading the Playwright implementation takes minimal effort as it represents what the end user would see on the real page.
 
 ## Runtime performance
 To gather accurate runtime performance metrics I created three sets of test cases going over basic functionality of our application. I was unable to use Cypress for these tests because of its inability to handle iFrames. Overall runtime performance was increased by *58%*.
 With this performance increase we also see faster development times because we spend less time waiting for the tests to run.
 
 ## Iframe support
+
 **Cypress**
 - No Iframe support
 
@@ -46,6 +75,7 @@ With this performance increase we also see faster development times because we s
 - Built in support
 
 ## Tooling
+
 **Cypress**
 - Offers a clean dashboard to run tests from and report off of
 - Has a recorder browser plugin
@@ -67,14 +97,12 @@ With this performance increase we also see faster development times because we s
 - Provides unsafe selectors (xpath, and class name based)
 
 ## Public metrics
-**Cypress**
-- 42.7k stars on Github
-- 2.7k open issues on Github
+| Automation Tool | Github Stars | Open Github Issues |
+|-----------------|--------------|--------------------|
+| **Playwright**  | 48.2k        | 738                |
+| **Selenium**    | 25.9k        | 149                |
+| **Cypress**     | 42.7k        | 2.7k               |
 
-**Playwright**
-- 48.2k stars on Github
-- 738 open issues on Github
-
-**Selenium**
-- 25.9k stars on Github
-- 149 open issues on Github
+I've included stars and open issues as public metrics for these projects because I believe dependency management can be challenging.
+It's important to note that with Selenium being the gold standard for automation projects we can have a baseline of what a dependable project looks like.
+Given that Selenium has 149 issues, and Playwright is a close front runner with 738 open issues we can feel more confident in our decision to use Playwright as an automation tool.
