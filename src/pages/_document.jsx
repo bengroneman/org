@@ -36,9 +36,14 @@ const modeScript = `
   }
 `
 export default function Document() {
+
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
+        />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"
