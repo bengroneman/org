@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const meta = {
   author: 'Ben Groneman',
   date: '2023-03-17',
-  title: 'Playwright vs. Selenium vs. Playwright',
+  title: 'Playwright vs. Selenium vs. Cypres',
   description:
     'A breakdown of my experience using these automation tools',
 }
@@ -56,7 +56,7 @@ password_input.send_keys("password")
 submit_btn = WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(By.CSS_SELECTOR,"#password"))
 submit_btn.click()
 ```
-As you can see the Selenium implementation shown above requires over twice the amount of code, and brings along some complexity, and makes assumptions about the ID's presented on the page.
+As you can see the Selenium implementation shown above requires over twice the amount of code, and brings along some complexity. It also makes assumptions about the ID's presented on the page.
 Reading the Playwright implementation takes minimal effort as it represents what the end user would see on the real page.
 
 ## Runtime performance
