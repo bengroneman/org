@@ -1,5 +1,4 @@
 import { Head, Html, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -40,10 +39,6 @@ export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
-        />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"

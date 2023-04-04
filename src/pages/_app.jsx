@@ -5,6 +5,7 @@ import { Header } from '@/components/Header'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
+import Script from "next/script";
 
 function usePrevious(value) {
   let ref = useRef()
@@ -28,6 +29,10 @@ export default function App({ Component, pageProps, router }) {
   }, []);
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
+      />
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
