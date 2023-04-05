@@ -19,20 +19,21 @@ function usePrevious(value) {
 
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-1E045Z2EX4');
-  }, []);
   return (
     <>
       <Script
-        async
         src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
+        strategy="afterInteractive"
       />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-1E045Z2EX4');
+        `}
+      </Script>
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
