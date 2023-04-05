@@ -52,6 +52,7 @@ export default function Document() {
         />
       </Head>
         <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+
           <input type="email" name="email" />
         </form>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">

@@ -22,7 +22,7 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-1E045Z2EX4"
+        src="https://www.googletagmanager.com/gtag/js?id=G-0E045Z2EX4"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps, router }) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-1E045Z2EX4');
+          gtag('config', 'G-0E045Z2EX4');
         `}
       </Script>
       <div className="fixed inset-0 flex justify-center sm:px-8">
