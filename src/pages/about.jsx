@@ -61,16 +61,19 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Ben Groneman. I live in Fremont County, where I design websites and provid IT consulting services.
+              I’m Ben Groneman. I live in Fremont County, where I design websites and provide IT consulting services.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I have been a computer Enthusiast since a young age.
-                With my enthusiasm of Computers I have focused on improving the end user experience.
+                I am an avid developer with a passion for helping my community grow with technology.
+                Most recently I have built a website for a non-profit known as Almost Home Wyoming,
+                an organization that helps folks go from homeless to hopeful in just a few steps.
+                Before that I was working with the Water for Wildlife foundation to build an exciting museum exhibit.
+                The exhibit can be found at the Water for Wildlife museum (545 Main street, Lander Wyoming).
               </p>
               <p>
-                While in school I first worked with Wyoming Inc.
-                During my time there I learned about buildng websites with Wordpress on a custom PHP framework
+                I attended school at Central Wyoming College, and earned my Associates degree in Computer Science, while in school I also worked as a Front-End Developer with Wyoming Inc.
+                During my time there I learned about building websites with Wordpress on a custom PHP framework
               </p>
               <p>
                 After my time with Wyoming Inc., I began building frontend features with NOLS,
@@ -79,17 +82,13 @@ export default function About() {
                 and brought a strong focus on automation.
               </p>
               <p>
-                Since then I have spent time working in IT consulting for the Fremont County area;
-                I most recently just wrapped up a website for the Almost Home Wyoming Organization: 
-                <a href="https://almosthomewyoming.org" alt="almost home wyoming website" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">Almost Home Wyoming</a>
+                I now work as a Lead QA Automation Engineer with Language I/O, a company providing multilingual customer support services to a global audience.
               </p>
+              <p>With my extensive Web Development and IT service experience I am a strong candidate to build your next project - contact me for more details</p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.comg/maygately" icon={TwitterIcon}>
-                Follow on Twitter
-              </SocialLink>
               <SocialLink href="https://github.com/bengroneman/" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
