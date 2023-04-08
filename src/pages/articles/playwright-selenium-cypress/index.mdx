@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const meta = {
   author: 'Ben Groneman',
   date: '2023-03-17',
-  title: 'Playwright vs. Selenium vs. Cypres',
+  title: 'Playwright vs. Selenium',
   description:
     'A breakdown of my experience using these automation tools',
 }
@@ -13,13 +13,13 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 ## Overview
 
-Below is a breakdown of the features and tooling available for three E2E testing frameworks (Cypress, Playwright, and Selenium). Playwright has the most versatile setup, offering extensive and simple locators, while including frame support, and integration with existing reporting systems and tooling.
+Below is a breakdown of the features and tooling available for two E2E testing frameworks (Playwright, and Selenium). Playwright has the most versatile setup, offering extensive and simple locators, while including frame support, and integration with existing reporting systems and tooling.
 With auto waiting functionality the Playwright tests averaged **58% faster test runs**, with very similar results for the success rate.
 
 One thing to note: though I do include Cypress in this article, I was unable to write tests in it due to its lack of iFrame support (at the time of writing), which made testing within the Salesforce platform impossible.
 I included Cypress loosely in this article to inform, but not to compare performance, though I suspect the performance is similar to the gains seen from Playwright given the auto waiting functionality.
 
- ## Selectors
+## Selectors
 **Cypress**
 - Only can use CSS selectors
 - This means no xpaths
