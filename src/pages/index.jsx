@@ -169,11 +169,11 @@ function Resume ({entries}) {
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
+                  {role.start.label ?? formatDate(role.start)}
                 </time>{' '}
                 <span aria-hidden="true">—</span>{' '}
                   <time>
-                    {role.end ? role.end : 'Present'}
+                    {role.end ? formatDate(role.end) : 'Present'}
                   </time>
               </dd>
             </dl>

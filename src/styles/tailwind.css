@@ -2,6 +2,6 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
-p > a {
+h3, p > a {
     @apply underline decoration-cyan-500 underline-offset-2;
 }
