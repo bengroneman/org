@@ -65,7 +65,7 @@ export default function About() {
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 I am an avid developer with a passion for helping my community grow with technology.
-                Most recently I have built a website for a non-profit known as <a aria-label="link to almost home website" target="_blank" href="https://almosthomewyoming.org">Almost Home Wyoming</a>,
+                Most recently I have built a website for a non-profit known as <a rel="noreferrer" aria-label="link to almost home website" target="_blank" href="https://almosthomewyoming.org">Almost Home Wyoming</a>,
                 an organization that helps folks go from homeless to hopeful with just a little help.
                 Before that I was working with the Water for Wildlife foundation to build an exciting museum exhibit.
                 The exhibit can be found at the Water for Wildlife museum (545 Main street, Lander Wyoming).
@@ -78,7 +78,7 @@ export default function About() {
                 I have spent over eight years working in IT, and building cool stuff on the web. Currently I work as a Lead QA Automation Engineer with Language I/O.
               </p>
               <p>
-                <a aria-label="link to my current company" target="_blank" href="https://languageio.com/" >Language I/O</a> is a company providing multilingual customer support services to a global audience. I spend time automating a full suite of End-to-End tests across multiple CRM's and tools.
+                <a rel="noreferrer" aria-label="link to my current company" target="_blank" href="https://languageio.com/" >Language I/O</a> is a company providing multilingual customer support services to a global audience. I spend time automating a full suite of End-to-End tests across multiple CRMs and tools.
               </p>
               <p>With my extensive Web Development and IT service experience I am a strong candidate to build your next project - contact me for more details</p>
             </div>
