@@ -4,6 +4,7 @@ import Link from "next/link"
 import clsx from "clsx"
 
 import { Container } from "@/components/Container"
+import { ContactForm } from "@/components/ContactForm";
 import {
   GitHubIcon,
   LinkedInIcon,
@@ -64,23 +65,20 @@ export default function About() {
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 I am an avid developer with a passion for helping my community grow with technology.
-                Most recently I have built a website for a non-profit known as Almost Home Wyoming,
-                an organization that helps folks go from homeless to hopeful in just a few steps.
+                Most recently I have built a website for a non-profit known as <a aria-label="link to almost home website" target="_blank" href="https://almosthomewyoming.org">Almost Home Wyoming</a>,
+                an organization that helps folks go from homeless to hopeful with just a little help.
                 Before that I was working with the Water for Wildlife foundation to build an exciting museum exhibit.
                 The exhibit can be found at the Water for Wildlife museum (545 Main street, Lander Wyoming).
               </p>
               <p>
-                I attended school at Central Wyoming College, and earned my Associates degree in Computer Science, while in school I also worked as a Front-End Developer with Wyoming Inc.
-                During my time there I learned about building websites with Wordpress on a custom PHP framework
+                I attended school at Central Wyoming College, and earned my Associates degree in Computer Science (2018). While in school I also worked as a Front-End Developer with Wyoming Inc.
+                During my time there I learned how to build quality websites with Wordpress using a custom PHP framework
               </p>
               <p>
-                After my time with Wyoming Inc., I began building frontend features with NOLS,
-                the National Outdoor Leadership School. Shortly after my internship with NOLS,
-                I was leading digital marketing campaigns to improve outward bound messaging,
-                and brought a strong focus on automation.
+                I have spent over eight years working in IT, and building cool stuff on the web. Currently I work as a Lead QA Automation Engineer with Language I/O.
               </p>
               <p>
-                I now work as a Lead QA Automation Engineer with Language I/O, a company providing multilingual customer support services to a global audience.
+                <a aria-label="link to my current company" target="_blank" href="https://languageio.com/" >Language I/O</a> is a company providing multilingual customer support services to a global audience. I spend time automating a full suite of End-to-End tests across multiple CRM's and tools.
               </p>
               <p>With my extensive Web Development and IT service experience I am a strong candidate to build your next project - contact me for more details</p>
             </div>
@@ -101,6 +99,7 @@ export default function About() {
                 create@blueengineering.dev
               </SocialLink>
             </ul>
+            <ContactForm></ContactForm>
           </div>
         </div>
       </Container>

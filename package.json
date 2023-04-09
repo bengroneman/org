@@ -1,6 +1,7 @@
 {
-  "name": "tailwindui-template",
-  "version": "0.1.0",
+  "name": "ben-groneman-portfolio",
+  "version": "1.0.1",
+  "author": "Ben Groneman",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,6 +16,7 @@
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
     "@next/mdx": "^13.0.2",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.12",
     "chart.js": "^4.2.1",
