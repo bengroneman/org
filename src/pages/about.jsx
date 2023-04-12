@@ -80,7 +80,7 @@ export default function About() {
               <p>
                 <a rel="noreferrer" aria-label="link to my current company" target="_blank" href="https://languageio.com/" >Language I/O</a> is a company providing multilingual customer support services to a global audience. I spend time automating a full suite of End-to-End tests across multiple CRMs and tools.
               </p>
-              <p>With over eight years of experience in Web Development and IT service experience I would love to join you on your next project. Please reach out about your next project and lets chat.</p>
+              <p>With over eight years of experience in Web Development and IT service experience I would love to join you on your next project. Feel free to use the form on the right, or email me directly about your next project.</p>
             </div>
           </div>
           <div className="lg:pl-20">

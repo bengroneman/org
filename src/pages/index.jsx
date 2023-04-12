@@ -211,25 +211,25 @@ function Photos() {
   )
 }
 
-export default function Home({ articles, resumeEntries, homePageContent }) {
+export default function Home({ articles, resumeEntries }) {
   return (
     <>
       <Head>
         <title>
-          Ben Groneman - Software Engineer, owner, and Automation Enthusiast
+          Ben Groneman - Software Engineer and Automation Enthusiast
         </title>
         <meta
           name="description"
-          content={homePageContent.attributes.SubHeader}
+          content="A mission driven engineer with a drive to solve user experience challenges with data-driven and intuitive solutions. I bring diverse experience in Web Development, data engineering, consulting, with a soft spot for Python."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            {homePageContent.attributes.Header}
+            Software designer and automation enthusiast
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            {homePageContent.attributes.SubHeader}
+            Hi, my name is Ben Groneman. I am an mission driven engineer with a drive to solve user experience challenges with data-driven and intuitive solutions. I bring diverse experience in web development, automation, consulting, and have a soft spot for Python.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -249,6 +249,7 @@ export default function Home({ articles, resumeEntries, homePageContent }) {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
+            <h2 className={"text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl"}>Articles</h2>
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
@@ -274,7 +275,6 @@ export async function getStaticProps() {
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),
       resumeEntries: await getAllResumeEntries(),
-      homePageContent: await getHomePageContent(),
     },
   }
 }
