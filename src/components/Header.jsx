@@ -231,7 +231,7 @@ function Avatar({ large = false, className, ...props }) {
     >
       <Image
         src={avatarImage}
-        alt=""
+        alt="Blue Engineering Logo"
         priority
       />
     </Link>
@@ -367,7 +367,7 @@ export function Header() {
                 <div className="relative">
                   <Avatar
                     large
-                    className="block h-32 w-32 origin-left"
+                    className="block h-48 w-48 origin-left"
                     style={{ transform: 'var(--avatar-image-transform)' }}
                   />
                 </div>

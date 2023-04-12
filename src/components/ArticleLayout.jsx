@@ -40,7 +40,6 @@ export function ArticleLayout({
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
-          <Image src={catBug} alt={"Cat bug logo"} className={"mx-auto mb-12"}/>
           <div className="mx-auto max-w-2xl">
             {previousPathname && (
               <button
@@ -53,6 +52,7 @@ export function ArticleLayout({
               </button>
             )}
             <article>
+              <Image src={catBug} alt={"Cat bug logo"} className={"mr-auto mb-12 w-32"}/>
               <header className="flex flex-col">
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                   {meta.title}

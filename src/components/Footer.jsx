@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import monogram from '@/images/logos/BE_Logo_Monogram.png'
 
 import { Container } from '@/components/Container'
 
@@ -24,6 +26,7 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
               </div>
+              <Image src={monogram} alt={"monogram logo in the footer"} className={"w-12"}></Image>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Ben Groneman. All rights
                 reserved.
