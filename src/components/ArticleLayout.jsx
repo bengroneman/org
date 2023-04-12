@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Image from "next/image"
 
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { formatDate } from '@/lib/formatDate'
+import catBug from '@/images/logos/BE_Cat.png'
 
 function ArrowLeftIcon(props) {
   return (
@@ -38,6 +40,7 @@ export function ArticleLayout({
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
+          <Image src={catBug} alt={"Cat bug logo"} className={"mx-auto mb-12"}/>
           <div className="mx-auto max-w-2xl">
             {previousPathname && (
               <button
