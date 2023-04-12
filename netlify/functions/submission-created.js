@@ -5,8 +5,7 @@ exports.handler = async (event, context) => {
   const msg = {
     to: email,
     from: 'create@blueengineering.dev',
-    subject: 'Thank you for reaching out',
-    html: '<strong>Hello there, my name is Ben Groneman, and I will review your submission within 48 hours.</strong>',
+    template_id: "d-a8d4948874b8423a8c8bd3c89d5b7584"
   }
   let data;
   try {
